@@ -16,6 +16,7 @@ public class ExpenseController {
     private ExpenseService expenseService;
 
     // Add a new expense
+    @PostMapping
     public Expense addExpense(@RequestBody Expense expense) {
         return expenseService.addExpense(expense);
     }

@@ -3,6 +3,7 @@ package com.fraserlint.expenses_manager.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 @Data
 @Entity
 @Table(name = "expenses")
+@NoArgsConstructor
 public class Expense {
 
     @Id
@@ -20,7 +22,7 @@ public class Expense {
 
     private String category;
     private String description;
-    private Double amount;
+    private double amount;
 
     private LocalDate date;
 }
