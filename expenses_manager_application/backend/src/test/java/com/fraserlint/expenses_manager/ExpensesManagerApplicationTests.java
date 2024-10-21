@@ -1,10 +1,10 @@
-package com.fraserlint.expensesmanager;
+package com.fraserlint.expenses_manager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ExpensesmanagerApplicationTests {
+class ExpensesManagerApplicationTests {
 
 	@Test
 	void contextLoads() {
