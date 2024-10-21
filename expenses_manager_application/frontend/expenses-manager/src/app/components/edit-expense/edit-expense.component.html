@@ -1,1 +1,30 @@
-<p>edit-expense works!</p>
+<h2>Edit Expense</h2>
+<form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Date</mat-label>
+    <input matInput formControlName="date" type="date" required>
+    <mat-error *ngIf="expenseForm.get('date')?.hasError('required')">Date is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <input matInput formControlName="description" required>
+    <mat-error *ngIf="expenseForm.get('description')?.hasError('required')">Description is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Amount</mat-label>
+    <input matInput formControlName="amount" type="number" required>
+    <mat-error *ngIf="expenseForm.get('amount')?.hasError('required')">Amount is required</mat-error>
+    <mat-error *ngIf="expenseForm.get('amount')?.hasError('min')">Amount must be positive</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <input matInput formControlName="category" required>
+    <mat-error *ngIf="expenseForm.get('category')?.hasError('required')">Category is required</mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="expenseForm.invalid">Update Expense</button>
+  <button mat-button routerLink="/">Cancel</button>
+</form>

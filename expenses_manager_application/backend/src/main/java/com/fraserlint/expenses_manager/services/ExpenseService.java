@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ExpenseService {
@@ -18,6 +19,11 @@ public class ExpenseService {
     // Add a new expense
     public Expense addExpense(Expense expense) {
         return expenseRepository.save(expense);
+    }
+
+    // Find expense by ID
+    public Optional<Expense> findById(Long id) {
+        return expenseRepository.findById(id); // Using Optional to handle potential null values
     }
 
     // Get expenses for a specific date range

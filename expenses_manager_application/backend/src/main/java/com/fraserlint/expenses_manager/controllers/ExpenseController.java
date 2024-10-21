@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/expenses")
@@ -19,6 +20,12 @@ public class ExpenseController {
     @PostMapping
     public Expense addExpense(@RequestBody Expense expense) {
         return expenseService.addExpense(expense);
+    }
+
+    // Get a specific expense by its ID
+    @GetMapping("/{id}")
+    public Optional<Expense> getExpenseById(@PathVariable Long id) {
+        return expenseService.findById(id);
     }
 
     // Get expenses for a specific week

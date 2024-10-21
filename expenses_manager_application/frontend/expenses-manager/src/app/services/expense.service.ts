@@ -17,6 +17,11 @@ export class ExpenseService {
     return this.http.get<Expense[]>(`${this.apiUrl}`);
   }
 
+  // Get a specific expense by its ID
+  getExpenseById(id: number): Observable<Expense> {
+    return this.http.get<Expense>(`${this.apiUrl}/expenses/${id}`);
+  }
+
   // Add a new expense
   addExpense(expense: Expense): Observable<Expense> {
     return this.http.post<Expense>(`${this.apiUrl}`, expense);
