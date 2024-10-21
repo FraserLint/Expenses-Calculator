@@ -3,6 +3,7 @@ package com.fraserlint.expenses_manager.services;
 import com.fraserlint.expenses_manager.entities.Expense;
 import com.fraserlint.expenses_manager.repos.ExpenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -24,6 +25,22 @@ public class ExpenseService {
     // Find expense by ID
     public Optional<Expense> findById(Long id) {
         return expenseRepository.findById(id); // Using Optional to handle potential null values
+    }
+
+    // Update expense by ID
+    public Optional<Expense> updateExpense(Long id, Expense expenseDetails) {
+        return expenseRepository.findById(id).map(expense -> {
+            expense.setCategory(expenseDetails.getCategory());
+            expense.setDescription(expenseDetails.getDescription());
+            expense.setAmount(expenseDetails.getAmount());
+            expense.setDate(expenseDetails.getDate());
+            return expenseRepository.save(expense);  // Save updated expense
+        });
+    }
+
+    // Delete expense by ID
+    public void deleteById(Long id) {
+        expenseRepository.deleteById(id);
     }
 
     // Get expenses for a specific date range

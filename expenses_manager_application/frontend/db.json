@@ -1,0 +1,52 @@
+{
+  "employees": [
+    {
+      "firstName": "Austin",
+      "lastName": "Davison",
+      "email": "austindagamingpro@gmail.com",
+      "dob": "2024-10-15T23:00:00.000Z",
+      "gender": "male",
+      "education": "Graduate",
+      "company": "Google",
+      "experience": 125,
+      "salary": 127,
+      "id": "1c08"
+    },
+    {
+      "firstName": "asd",
+      "lastName": "asdasd",
+      "email": "austindagamingpro@gmail.com",
+      "dob": "2024-10-15T23:00:00.000Z",
+      "gender": "female",
+      "education": "Graduate",
+      "company": "Austin's Server",
+      "experience": 2,
+      "salary": 245,
+      "id": "ead4"
+    },
+    {
+      "id": "66a9",
+      "firstName": "Austin",
+      "lastName": "Davison",
+      "email": "austindagamingpro@gmail.com",
+      "dob": "2024-10-15T23:00:00.000Z",
+      "gender": "male",
+      "education": "Graduate",
+      "company": "Google",
+      "experience": 125,
+      "salary": 12333
+    },
+    {
+      "id": "30c6",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "test@gmail.com",
+      "dob": "2024-10-07T23:00:00.000Z",
+      "gender": "male",
+      "education": "Diploma",
+      "company": "Google",
+      "experience": 2254,
+      "salary": 2415
+    }
+  ]
+}

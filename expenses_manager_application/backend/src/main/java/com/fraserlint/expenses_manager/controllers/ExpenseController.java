@@ -3,6 +3,7 @@ package com.fraserlint.expenses_manager.controllers;
 import com.fraserlint.expenses_manager.entities.Expense;
 import com.fraserlint.expenses_manager.services.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -26,6 +27,24 @@ public class ExpenseController {
     @GetMapping("/{id}")
     public Optional<Expense> getExpenseById(@PathVariable Long id) {
         return expenseService.findById(id);
+    }
+
+    // Update a specific expense by its ID
+    @PutMapping("/{id}")
+    public ResponseEntity<Expense> updateExpense(@PathVariable Long id, @RequestBody Expense expenseDetails) {
+        Optional<Expense> updatedExpense = expenseService.updateExpense(id, expenseDetails);
+
+        if (updatedExpense.isPresent()) {
+            return ResponseEntity.ok(updatedExpense.get());  // 200 OK with updated entity
+        } else {
+            return ResponseEntity.notFound().build();  // 404 if not found
+        }
+    }
+
+    // Delete a specific expense by its ID
+    @DeleteMapping("/{id}")
+    public void deleteExpenseById(@PathVariable Long id) {
+        expenseService.deleteById(id);
     }
 
     // Get expenses for a specific week

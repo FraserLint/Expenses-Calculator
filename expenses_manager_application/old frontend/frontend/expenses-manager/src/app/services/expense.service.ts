@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class ExpenseService {
 
-  private apiUrl = 'http://localhost:8080/api/expenses';
+  private apiUrl = '/api/expenses';
 
   constructor(private http: HttpClient) { }
 

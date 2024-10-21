@@ -1,0 +1,26 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.main-body {
+  padding-top: 20px;
+  max-width: 1348px;
+  margin: 0 auto;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.action {
+  display: flex;
+  gap: 5px;
+}
+
+.table-container {
+  box-shadow: 0px 0px 12px grey;
+}
+
+.add-button {
+  margin-bottom: 10px;
+}
