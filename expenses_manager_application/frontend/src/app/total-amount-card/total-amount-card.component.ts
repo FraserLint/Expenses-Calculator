@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class TotalAmountCardComponent {
 
+  selectedYear = "";
+  dummyYearTotal = 234.23;
+  dummyMonthTotal = 104.96;
+  dummyWeekTotal = 32.43;
 }

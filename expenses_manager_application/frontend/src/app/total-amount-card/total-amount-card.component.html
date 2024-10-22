@@ -1,1 +1,35 @@
-<p>total-amount-card works!</p>
+<mat-form-field appearance="fill">
+  <mat-label>Total Expenses Amount For:</mat-label>
+  <mat-select [(value)]="selectedYear">
+    <mat-option value="tax-year">Whole Tax Year</mat-option>
+    <mat-option value="selected-month">Selected Month</mat-option>
+    <mat-option value="selected-week">Selected Week</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-card class="example-card" appearance="outlined">
+  <div *ngIf="selectedYear === 'tax-year'">
+    <mat-card-header>
+      <mat-card-title>Total Expenses Amount For Whole Tax Year</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <h3>{{ dummyYearTotal | currency:'GBP' }}</h3>
+    </mat-card-content>
+  </div>
+  <div *ngIf="selectedYear === 'selected-month'">
+    <mat-card-header>
+      <mat-card-title>Total Expenses Amount For Selected Month</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <h3>{{ dummyMonthTotal | currency:'GBP' }}</h3>
+    </mat-card-content>
+  </div>
+  <div *ngIf="selectedYear === 'selected-week'">
+    <mat-card-header>
+      <mat-card-title>Total Expenses Amount For Selected Week</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <h3>{{ dummyWeekTotal | currency:'GBP' }}</h3>
+    </mat-card-content>
+  </div>
+</mat-card>
