@@ -24,12 +24,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { TotalAmountCardComponent } from './total-amount-card/total-amount-card.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmpAddEditComponent
+    EmpAddEditComponent,
+    TotalAmountCardComponent
   ],
   imports: [
     BrowserModule,
